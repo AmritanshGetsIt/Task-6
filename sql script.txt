@@ -1,0 +1,8 @@
+SELECT
+  STRFTIME('%Y', Date) AS Year,
+  STRFTIME('%m', Date) AS Month,
+  SUM("Total Revenue") AS Monthly_Revenue,
+  COUNT(DISTINCT "Transaction ID") AS Order_Volume
+FROM "Online_Sales_Data"
+GROUP BY Year, Month
+ORDER BY Year, Month;
